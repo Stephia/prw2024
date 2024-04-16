@@ -1,15 +1,20 @@
 <?php
 
-// Lendo o raio da esfera
-$raio = floatval(readline());
+// Lendo os valores de entrada
+list($A, $B, $C) = sscanf(readline(), "%f %f %f");
 
-// Definindo o valor de pi
-$pi = 3.14159;
+// Calculando as áreas
+$area_triangulo = ($A * $C) / 2;
+$area_circulo = 3.14159 * pow($C, 2);
+$area_trapezio = (($A + $B) * $C) / 2;
+$area_quadrado = pow($B, 2);
+$area_retangulo = $A * $B;
 
-// Calculando o volume da esfera
-$volume = (4.0/3) * $pi * pow($raio, 3);
-
-// Imprimindo o volume com 3 casas decimais
-echo "VOLUME = " . number_format($volume, 3, '.', '') . "\n";
+// Imprimindo as áreas com 3 dígitos após o ponto decimal
+echo "TRIANGULO: " . number_format($area_triangulo, 3, '.', '') . "\n";
+echo "CIRCULO: " . number_format($area_circulo, 3, '.', '') . "\n";
+echo "TRAPEZIO: " . number_format($area_trapezio, 3, '.', '') . "\n";
+echo "QUADRADO: " . number_format($area_quadrado, 3, '.', '') . "\n";
+echo "RETANGULO: " . number_format($area_retangulo, 3, '.', '') . "\n";
 
 ?>
